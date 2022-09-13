@@ -2,7 +2,7 @@
 //Импотрируем модуль Random для генерации сулчайных чисел
 import java.util.Random;
 
-public class Mainclass {
+public class MAIN {
 
     public static void main(String[] args){
         //Объявляем и инициализируем используемые переменные 
