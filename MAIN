@@ -1,0 +1,41 @@
+import java.util.Random;
+public class MAIN {
+
+    public static void main(String[] args){
+        Random rnd = new Random();
+        short[] c = new short[14];
+        short n = 3;
+        float[] x = new float[11];
+        double[][] c2 = new double[14][11];
+        for (int i = 0; i <= 13; i++){
+            c[i] = n;
+            n++;
+        }
+
+        for (int i = 0; i<=10; i++){
+            x[i] = rnd.nextFloat(8)-4;
+        }
+        for (short i = 0; i <=13; i++){
+            if (c[i] == 14) {
+                for (short j = 0; j<=10; j++){
+                    c2[i][j] = Math.pow(Math.cbrt(Math.asin(x[j]/8)), 0.5*Math.tan(Math.pow(x[j]/2, 2)));
+                }
+            } else if (i == 4 || i == 6 || i == 9 || i == 11) {
+                for (short j = 0; j<=10; j++){
+                    c2[i][j] = Math.cbrt(Math.pow(Math.pow(Math.E, Math.tan(x[j])),Math.tan(Math.tan(x[j]))/(2/3 + Math.log(Math.pow(Math.tan(x[j]), 2)))));
+                }
+            } else {
+                for (short j = 0; j <= 10; j++){
+                    c2[i][j] = Math.atan(Math.pow(x[j]/8, 2))*4;
+                }
+            }
+        }
+
+        for (double[] h : c2){
+            for (double h2 : h){
+                System.out.printf("%.3f ",h2);
+            }
+            System.out.println();
+        }
+    }
+}
