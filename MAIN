@@ -1,20 +1,26 @@
+
+//Импотрируем модуль Random для генерации сулчайных чисел
 import java.util.Random;
-public class MAIN {
+
+public class Mainclass {
 
     public static void main(String[] args){
+        //Объявляем и инициализируем используемые переменные 
         Random rnd = new Random();
         short[] c = new short[14];
         short n = 3;
         float[] x = new float[11];
         double[][] c2 = new double[14][11];
+        //Заполняем первый массив
         for (int i = 0; i <= 13; i++){
             c[i] = n;
             n++;
         }
-
+        //Заполняем второй массив используя модуль Random
         for (int i = 0; i<=10; i++){
             x[i] = rnd.nextFloat(8)-4;
         }
+        //Проверяем числа первого массива и подставляем числа второго массива в формулы
         for (short i = 0; i <=13; i++){
             if (c[i] == 14) {
                 for (short j = 0; j<=10; j++){
@@ -30,7 +36,7 @@ public class MAIN {
                 }
             }
         }
-
+        //выводим получившийся массив
         for (double[] h : c2){
             for (double h2 : h){
                 System.out.printf("%.3f ",h2);
